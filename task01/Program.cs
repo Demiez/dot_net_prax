@@ -17,12 +17,14 @@ namespace task01
         static void CalculateIncome(int investment)
         {
             double income = investment;
+            double incomePerMonth;
             Console.WriteLine("Ваш первоначальный вклад: {0}", income);
 
             for (int i = 0; i < 10; i++)
             {
-                income += income * 0.02;
-                Console.WriteLine("Теперь ваш доход: {0}", Math.Round(income - investment, 2));
+                incomePerMonth = income * 0.02;
+                income += incomePerMonth;
+                Console.WriteLine("Прирост суммы за {0} месяц: {1}", i + 1, Math.Round(incomePerMonth, 2));
             }
         }
     }
